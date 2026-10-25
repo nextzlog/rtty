@@ -1,0 +1,10 @@
+[package]
+name = "rtty"
+description = "Rust FSK Library for FT8, FT4 and RTTY"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+rustfft.workspace = true
