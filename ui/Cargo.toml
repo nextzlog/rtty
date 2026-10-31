@@ -1,0 +1,33 @@
+[package]
+name = "rtty-ui"
+description = "RTTY panel and application."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+publish = false
+
+[features]
+default = ["app"]
+app = ["dep:eframe", "dep:cpal", "dep:rfd"]
+
+[lib]
+path = "src/lib.rs"
+
+[[bin]]
+name = "rtty"
+path = "src/main.rs"
+required-features = ["app"]
+
+[dependencies]
+rtty.workspace = true
+egui.workspace = true
+hound.workspace = true
+cpal = { workspace = true, optional = true }
+eframe = { workspace = true, optional = true }
+rfd = { workspace = true, optional = true }
+
+[dev-dependencies]
+egui = { workspace = true, features = ["default_fonts"] }
+egui_kittest.workspace = true
+egui_system_font_provider.workspace = true
